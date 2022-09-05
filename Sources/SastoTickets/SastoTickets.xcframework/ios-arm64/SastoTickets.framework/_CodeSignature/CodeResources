@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		orR862j4ecrvIhIPA46yl2clAXQ=
+		8FYRbhd2XeUCm/AYNg58DrA0CeM=
 		</data>
 		<key>FiraSans-Bold.ttf</key>
 		<data>
@@ -38,19 +38,19 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		U8J6BF3BXC/ogDIVTgeSlWA84BE=
+		Ufz+Tnk0z2uB8bptCtyYA4YKeBI=
 		</data>
 		<key>Modules/SastoTickets.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		DH/gR0HYy31X6KQpWZGXuFVqJFE=
+		YVUagHhlRgA6icgdG5Kc3gpYUZE=
 		</data>
 		<key>Modules/SastoTickets.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		ossguvHKQ+F9TKiQFbHqNO6aOUk=
+		TEOJA3mY/iCul1zKmr5PwZu3pAA=
 		</data>
 		<key>Modules/SastoTickets.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		ZdEYkab7B/X9Ya/qsU/g7XE7EYI=
+		Oa1UDb1ngeskM2KrsimnN4PzXKs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -63,7 +63,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kjrCnQ5vwZb4/MMoq/aMVJtCX/Kg+8nOjdWyxjC1IAE=
+			+t6EaAnJVEtUrb/98ym40XbKgyl3YsEQj8TVtoiYmew=
 			</data>
 		</dict>
 		<key>FiraSans-Bold.ttf</key>
@@ -119,21 +119,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			mc0HRzp/OpSs6PUvnXq5f2ovrjPKlO9V3OmFdwd7IoQ=
+			P/IBTZ2SpkHZ6JOHembhF1mThDl7bgBw670iOQO51Sw=
 			</data>
 		</dict>
 		<key>Modules/SastoTickets.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3MnY7IJy+OA9z8nlaVrPpsX/Tn7j8AhOdNKr6MOaBC4=
+			R+uMi394D0u0KB0mCpcruho1nPhEqNQqm64EV+QW8fg=
 			</data>
 		</dict>
 		<key>Modules/SastoTickets.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			z2fie7MoxUxDnvbSUOi0zaxyg1moKguyDHn08ZE2ST0=
+			BTGCR+d3FDY58LNl8arcqFrWLF+UuZWJr66qsIDZ3PQ=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
