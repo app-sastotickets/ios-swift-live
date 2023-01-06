@@ -42,7 +42,7 @@
 		</data>
 		<key>Modules/SastoTickets.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		jq7uiNoojPtLYoaSZpX3IPIfYm4=
+		UQHtgh8QcnE3Yw1Hw1sumR9NyNA=
 		</data>
 		<key>Modules/SastoTickets.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -58,11 +58,11 @@
 		</data>
 		<key>Modules/SastoTickets.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		fDZZBP3d3IEm9asIsfXdvKK3imU=
+		pE+dFMfouC+f8pwBf78HH4pje0k=
 		</data>
 		<key>Modules/SastoTickets.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		jq7uiNoojPtLYoaSZpX3IPIfYm4=
+		UQHtgh8QcnE3Yw1Hw1sumR9NyNA=
 		</data>
 		<key>Modules/SastoTickets.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -78,7 +78,7 @@
 		</data>
 		<key>Modules/SastoTickets.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		Gz+GlhNG19A5h5136NbHyQPFarA=
+		IFsPVPAdiYLhkIxj5lJcBo0cens=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -147,7 +147,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			P2YPANSog9woYjQ6SVIzID3uateJT9Jxje/5/i0kdR4=
+			djyzWDep7am5oTNoQKNy8l2pGa9Slc0MBkevM8tvprA=
 			</data>
 		</dict>
 		<key>Modules/SastoTickets.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -175,14 +175,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wXkU6ssDygVHtJZ/BGMCbVglS54R+NFFMybmbBnVzl0=
+			YpIhPaGVtq7n/j/7NGyQgwmItaBCzN34Rm00NCzjtwQ=
 			</data>
 		</dict>
 		<key>Modules/SastoTickets.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			P2YPANSog9woYjQ6SVIzID3uateJT9Jxje/5/i0kdR4=
+			djyzWDep7am5oTNoQKNy8l2pGa9Slc0MBkevM8tvprA=
 			</data>
 		</dict>
 		<key>Modules/SastoTickets.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -210,7 +210,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y063yMj8ydsuth3PSYlzwJWxelZ5kGBDZJFQpf/KaRo=
+			u3vNnwsMPm2sJgj1oPMQGOpEjal7PPdyAGrhr9a3oo8=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
