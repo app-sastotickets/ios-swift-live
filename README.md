@@ -30,7 +30,7 @@ import SastoTickets
 2. Run the following code preferably on button click which will display sastotickets user interface
 
 ```
-let vc = UIHostingController(rootView:SastoticketsView(clientId: "", clientSecret: "", walletBalance: 0, phone: ""){response, error in
+let vc = UIHostingController(rootView:SastoticketsView(clientId: "", clientSecret: "", userType: nil, walletBalance: nil ,phone: nil){response, error in
     if error != nil {
         //Handle error
     }
@@ -103,37 +103,159 @@ https://sastotickets-integration-b 2 b.web.app
 
 SDK will handle the 1. Flight Search, 2. Availability & 3. Reservation part and the 4.
 
-Payment and 5. Issue Ticket should be implemented at the Swift's end.
+Payment and 5. Issue Ticket should be implemented at your end.
 
 After the completion of 3. Reservation SDK will provide a callback with necessary payload required to
 call 5. Issue Ticket API
 
+The Following is the response for OneWay Trip
+
 ```
 Payload example from the SDK
 {
-"bookingSummary": {
-      "bookingReferenceID": "10f47dd7-2a6f-41c8-a3c0-9b4668249c88",
-      "PNR": "6W6P48",
-      "tripType": "oneway",
-      "currency": "NPR",
-      "passengers": [
-        {
-          "passenger_id": "ST308",
-          "passenger_type": "ADT",
-          "passenger_name": "Maharjan Rabi Kumar"
-        }
-      ]
-    }
-"bearerToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvMjAxOWRldi1h
-cGkuc2FzdG90aWNrZXRzLmNvbVwvYXBpXC9iMmJcL3YxXC9nZXQtdG9rZW4iLCJpYXQiOjE2NT
-U4MTc0NTksIm5iZiI6MTY1NTgxNzQ1OSwianRpIjoicHVOczhPRkpRMnZMS0xhMyIsInN1YiI
-MTQsInBydiI6ImYyN2RiZjM3OTBlN2IxZmNhOGRmYjZjODhlZjk1YWY5MDQ2YTg4ZmMifQ.kXY
-TKzP__Ya-CpP5vYRuzVB1JVbTUaQrPOi0NEBVRQY"
+  "totalCost": 15384,
+  "bearerToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUz",
+  "flightsSummary": {
+    "departureFlight": {
+      "carrierCode": "GUA",
+      "carrierLogo": "https://sastotickets-uat-flights.s3.ap-southeast1.amazonaws.com/airlines/1660816647-1480147710.png",
+      "carrierName": "Guna Airlines",
+      "deptDate": "2023-01-01",
+      "deptTime": "08:00 AM",
+      "arrivalDate": "2023-01-01",
+      "arrivalTime": "08:23 AM",
+      "departureAirportCode": "KTM",
+      "departureAirport": "Tribhuvan Int’l Airport",
+      "departureCity": "Kathmandu",
+      "departureCountry": "Nepal",
+      "arrivalAirportCode": "PKR",
+      "arrivalAirport": "Pokhara Airport",
+      "arrivalCity": "Pokhara",
+      "arrivalCountry": "Nepal"
+    },
+    "returnFlight": "null"
+  },
+  "emergencyContact": {
+    "contact": "9849123456",
+    "email": "info@sastotickets.com",
+    "name": "SastoTicket"
+  },
+  "bookingSummary": {
+    "PNR": "BNY5SO",
+    "currency": "NPR",
+    "fareInformation": {
+      "cashBack": 0,
+      "total_adt": 74635,
+      "total_chd": 0,
+      "total_cost": 74635,
+      "total_inf": 0
+    },
+    "passengers": [
+      {
+        "passenger_id": "ST2785",
+        "passenger_name": "Gurung Sujan",
+        "passenger_type": "ADT"
+      },
+      {
+        "passenger_id": "ST2786",
+        "passenger_name": "Thapa Bardan",
+        "passenger_type": "ADT"
+      },
+      {
+        "passenger_id": "ST2787",
+        "passenger_name": "Hitang Sonam",
+        "passenger_type": "CHD"
+      }
+    ],
+    "bookingReferenceID": "5f982584-4ece-4b6c-9c9b-370964e1318f",
+    "tripType": "oneway"
+  }
 }
 ```
-#### Swift Backend or App
+The Following is the response for Round Trip
 
-Swift should now implement the payment part and debit the customer's wallet/account and after the completion of payment should call the Sasto Tickets Ticket Issue API for issuing ticket and getting
+```
+Payload example from the SDK
+{
+  "totalCost": 15384,
+  "bearerToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUz",
+  "flightsSummary": {
+    "departureFlight": {
+      "carrierCode": "GUA",
+      "carrierLogo": "https://sastotickets-uat-flights.s3.ap-southeast1.amazonaws.com/airlines/1660816647-1480147710.png",
+      "carrierName": "Guna Airlines",
+      "deptDate": "2023-01-01",
+      "deptTime": "08:00 AM",
+      "arrivalDate": "2023-01-01",
+      "arrivalTime": "08:23 AM",
+      "departureAirportCode": "KTM",
+      "departureAirport": "Tribhuvan Int’l Airport",
+      "departureCity": "Kathmandu",
+      "departureCountry": "Nepal",
+      "arrivalAirportCode": "PKR",
+      "arrivalAirport": "Pokhara Airport",
+      "arrivalCity": "Pokhara",
+      "arrivalCountry": "Nepal"
+    },
+    "returnFlight": {
+      "carrierCode": "GUA",
+      "carrierLogo": "https://sastotickets-uat-flights.s3.ap-southeast1.amazonaws.com/airlines1660816647-1480147710.png",
+      "carrierName": "Guna Airlines",
+      "deptDate": "2023-01-01",
+      "deptTime": "08:00 AM",
+      "arrivalDate": "2023-01-01",
+      "arrivalTime": "08:23 AM",
+      "departureAirportCode": "KTM",
+      "departureAirport": "Tribhuvan Int’l Airport",
+      "departureCity": "Kathmandu",
+      "departureCountry": "Nepal",
+      "arrivalAirportCode": "PKR",
+      "arrivalAirport": "Pokhara Airport",
+      "arrivalCity": "Pokhara",
+      "arrivalCountry": "Nepal"
+    }
+  },
+  "emergencyContact": {
+    "contact": "9849123456",
+    "email": "info@sastotickets.com",
+    "name": "SastoTicket"
+  },
+  "bookingSummary": {
+    "PNR": "BNY5SO",
+    "currency": "NPR",
+    "fareInformation": {
+      "cashBack": 0,
+      "total_adt": 74635,
+      "total_chd": 0,
+      "total_cost": 74635,
+      "total_inf": 0
+    },
+    "passengers": [
+      {
+        "passenger_id": "ST2785",
+        "passenger_name": "Gurung Sujan",
+        "passenger_type": "ADT"
+      },
+      {
+        "passenger_id": "ST2786",
+        "passenger_name": "Thapa Bardan",
+        "passenger_type": "ADT"
+      },
+      {
+        "passenger_id": "ST2787",
+        "passenger_name": "Hitang Sonam",
+        "passenger_type": "CHD"
+      }
+    ],
+    "bookingReferenceID": "5f982584-4ece-4b6c-9c9b-370964e1318f",
+    "tripType": "round"
+  }
+}
+```
+
+#### Your App
+
+You should now implement the payment part and debit the customer's wallet/account and after the completion of payment should call the Sasto Tickets Ticket Issue API for issuing ticket and getting
 ticket details in the response.
 
 ```
@@ -151,83 +273,78 @@ Content-Type: application/json
 Body
 {
 "bookingReferenceID": "9a237fa9-d970-4457-8535-7440eeac06ac",
-"PNR": "6W6P48",
 "tripType": "oneway",
 "currency": "NPR",
 }
 
 Response Sample from Sasto Tickets
 {
-"success": true,
-"data": {
-"ticketSummary": {
-"ticketReferenceID": "fc2e2b9f-d5a8-4c28-a9c4-387354a88d6a",
-"PNR": "65NOLL",
-"tripType": "oneway",
-"currency": "NPR",
-"issued_date": "Wed, Jun 22, 2022"
-},
-"flightSummary": {
-"airline_confirmation_code": "65NOLL",
-"departure_date": "2022-07-15",
-"departure_time": "10:15 AM",
-"arrival_date": "2022-07-15",
-"arrival_time": "11:50 AM",
-"total_flying_hours": "04 Hr 20 Min",
-"depart_city_airport_code": "KTM",
-"depart_city_airport_name": "Tribhuvan Intl Airport",
-"depart_city_name": "Kathmandu City",
-"depart_city_country": "Nepal",
-"carrierCode": "QR",
-"carrierLogo": "https://sastotickets-flights.s3.ap-southeast-
-1.amazonaws.com/airlines/1633428326-1898803185.png",
-"carrierName": "Qatar Airways",
-"dest_city_airport_code": "DOH",
-"dest_city_airport_name": "Hamad Int’l Airport",
-"dest_city_name": "Doha",
-"dest_city_country": "Qatar",
-"flight_segments": [
-{
-"carrierCode": "QR",
-"carrierName": "Qatar Airways",
-"carrierLogo": "https://sastotickets-flights.s3.ap-
-southeast-1.amazonaws.com/airlines/1633428326-1898803185.png",
-"flight_number": "653",
-"flight_equipment": "Airbus A330-300",
-"cabin_class": "M",
-"seg_departure_date": "2022-07-15",
-"seg_departure_time": "10:15 AM",
-"seg_arrival_date": "2022-07-15",
-"seg_arrival_time": "11:50 AM",
-"seg_total_flying_hours": "04:20:00",
-
-
-"seg_departure_airport_code": "KTM",
-"seg_departure_airport": "Tribhuvan Intl Airport",
-"seg_departure_city": "Kathmandu City",
-"seg_departure_country": "Nepal",
-"seg_departure_terminal": "I",
-"seg_arrival_airport_code": "DOH",
-"seg_arrival_airport": "Hamad Int’l Airport",
-"seg_arrival_city": "Doha",
-"seg_arrival_country": "Qatar",
-"seg_arrival_terminal": "",
-"seg_connection_time": false
-}
-]
-},
-"baggageDetails": {
-"cabin": "7 Kg",
-"baggage": "30 Kg"
-},
-"passengers": [
-{
-"passenger_type": "ADT",
-"passenger_name": "Maharjan Rabi Kumar",
-"eticket_number": "157-6930434619",
-"PNR": "65NOLL",
-"airlines_confirmation": "65NOLL"
-}
-]
-}
+  "success": true,
+  "data": {
+    "ticketSummary": {
+      "ticketReferenceID": "fc2e2b9f-d5a8-4c28-a9c4-387354a88d6a",
+      "PNR": "65NOLL",
+      "tripType": "oneway",
+      "currency": "NPR",
+      "issued_date": "Wed, Jun 22, 2022"
+    },
+    "flightSummary": {
+      "airline_confirmation_code": "65NOLL",
+      "departure_date": "2022-07-15",
+      "departure_time": "10:15 AM",
+      "arrival_date": "2022-07-15",
+      "arrival_time": "11:50 AM",
+      "total_flying_hours": "04 Hr 20 Min",
+      "depart_city_airport_code": "KTM",
+      "depart_city_airport_name": "Tribhuvan Intl Airport",
+      "depart_city_name": "Kathmandu City",
+      "depart_city_country": "Nepal",
+      "carrierCode": "QR",
+      "carrierLogo": "https://sastotickets-flights.s3.ap-southeast1.amazonaws.com/airlines/1633428326-1898803185.png",
+      "carrierName": "Qatar Airways",
+      "dest_city_airport_code": "DOH",
+      "dest_city_airport_name": "Hamad Int’l Airport",
+      "dest_city_name": "Doha",
+      "dest_city_country": "Qatar",
+      "flight_segments": [
+        {
+          "carrierCode": "QR",
+          "carrierName": "Qatar Airways",
+          "carrierLogo": "https://sastotickets-flights.s3.ap-southeast1.amazonaws.com/airlines/1633428326-1898803185.png",
+          "flight_number": "653",
+          "flight_equipment": "Airbus A330-300",
+          "cabin_class": "M",
+          "seg_departure_date": "2022-07-15",
+          "seg_departure_time": "10:15 AM",
+          "seg_arrival_date": "2022-07-15",
+          "seg_arrival_time": "11:50 AM",
+          "seg_total_flying_hours": "04:20:00",
+          "seg_departure_airport_code": "KTM",
+          "seg_departure_airport": "Tribhuvan Intl Airport",
+          "seg_departure_city": "Kathmandu City",
+          "seg_departure_country": "Nepal",
+          "seg_departure_terminal": "I",
+          "seg_arrival_airport_code": "DOH",
+          "seg_arrival_airport": "Hamad Int’l Airport",
+          "seg_arrival_city": "Doha",
+          "seg_arrival_country": "Qatar",
+          "seg_arrival_terminal": "",
+          "seg_connection_time": false
+        }
+      ]
+    },
+    "baggageDetails": {
+      "cabin": "7 Kg",
+      "baggage": "30 Kg"
+    },
+    "passengers": [
+      {
+        "passenger_type": "ADT",
+        "passenger_name": "Maharjan Rabi Kumar",
+        "eticket_number": "157-6930434619",
+        "PNR": "65NOLL",
+        "airlines_confirmation": "65NOLL"
+      }
+    ]
+  }
 }
